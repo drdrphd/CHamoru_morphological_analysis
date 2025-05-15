@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<title>CHamoru Morphological Analysis</title>
+	<meta name="description" content="Morphological Analysis of CHamoru words in the Guam Orthography">
+	<meta name="keywords" content="CHamoru, language, grammar, fino', Chamorro, morphology, morphological, analysis, affixation, affix, Guam, Guahan, linguistics, NSF, chachalani">
+	<meta name="author" content="NSF DEL grant, Building CHamoru Language Infrastructure">
+	<meta name="contributor" content="David Ruskin">
+	<meta name="contributor" content="Sandy Chung">
+	<meta name="contributor" content="Daniel Pangelinan">
+	<meta name="contributor" content="Jeremy Cepeda">
+	<meta name="contributor" content="Roseann Q. Pajarillo">
+	<meta name="contributor" content="Marciana Aguon">
+	<meta name="contributor" content="Loretta Cruz">
+	<meta name="contributor" content="Janice B. P. Toves">
+	<meta name="contributor" content="Nolan Flores">
+	<meta name="contributor" content="Jeniece Toves Hernandez">
+	<link rel="shortcut icon" 	 href="../favicon.ico" />
+	<link rel="apple-touch-icon" href="../site_icon.png" />
+	<link rel="icon"             href="../site_icon.png" />
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="morph_v036.css">
+	
+</head>
+<body>
+	<div id="ribbon">
+		<a class="current">Morph</a>
+		<a>Eng->CH</a>
+	</div>
+	<div id="morphFrame">
+		<div id="userInput">
+			<h4 class="testing">(now in beta testing)</h4>
+			<h2>CHamoru Morphological Analysis</h2>
+			<label for="entry">Enter a word to analyze:</label><br />
+			<input type="text" id="entry"><br />
+			<br />
+			<button id="submit" class="submit" onclick="morph()" disabled>Submit</button><span class="loading">Loading . . .</span>
+		</div>
+		
+		<div id="results">
+		</div>
+	</div>
+	
+	<!-- NEW SECTION - UPDATE AND ATTACH -->
+	<div id="searchFrame">
+		<div id="searchInput">
+			<h4 class="testing">(see <a href="https://diksionariu.com/">diksionariu.com</a> for updated search)</h4>
+			<h2>English -> CHamoru Search</h2>
+			<label for="searchEntry">Enter a word:</label><br />
+			<input type="text" id="searchEntry"><br />
+			<br />
+			<button id="searchSubmit" class="submit" onclick="search()" disabled>Search</button><span class="loading">Loading . . .</span>
+		</div>
+		<div id="searchResults">
+		</div>
+	</div>
+	
+	<div id="dictionary_popup">
+		<div id="dictionary">
+			<span class="loading">Loading . . .</span>
+		</div>
+		<div class="close_button" onclick="hide(this.parentNode)"></div>
+	</div>
+	
+	<script src="words_v036.js" type="text/javascript" charset="utf-8"></script>		<!-- array of CHamoru words -->
+	<script src="non-aff-wds_v036.js" type="text/javascript" charset="utf-8"></script>	<!-- array of words that do NOT take affixes -->
+	<script src="affixes_v036.js" type="text/javascript" charset="utf-8"></script>		<!-- array of affixes and meanings: ["aff/meaning",...] -->
+	<script src="rules_v036.js" type="text/javascript" charset="utf-8"></script>		<!-- list of affixing rules -->
+	<script src="tries_v036.js" type="text/javascript" charset="utf-8"></script>		<!-- list of affixing rules -->
+	<script src="getPHP_v036.js" type="text/javascript" charset="utf-8"></script>		<!-- initiate PHP retrieval of dictionary roots / English lookups -->
+	<script src="parse_v036.js" type="text/javascript" charset="utf-8"></script>		<!-- main logic / morphological breakdown -->
+	<script src="search_v036.js" type="text/javascript" charset="utf-8"></script>		<!-- English search -->
+	<script src="main-ui_v036.js" type="text/javascript" charset="utf-8"></script>		<!-- UI listeners, onload, etc. -->
+
+</body>
+</html>
