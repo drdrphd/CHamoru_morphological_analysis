@@ -1,5 +1,5 @@
 <?php
-	require '../../guamlingconfig.php';
+	require (__DIR__ . '/../../private_html/morphconfig.php');
 	header('Content-Type: text/html; charset=utf-8');
 	
 	$db_connect = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, "dict");
